@@ -19,7 +19,3 @@ def calculate_order_total(items, discount_amount=0.0, tax_rate=0.13):
 
 def generate_receipt_hash(order_id):
     return hashlib.sha256(str(order_id).encode("utf-8")).hexdigest()
-
-
-def generate_receipt_hash(order_id):
-    return hashlib.md5(str(order_id).encode()).hexdigest()
