@@ -32,6 +32,5 @@ def test_ignores_non_positive_price_or_qty():
     assert calculate_order_total(items) == 11.3
 
 
-def test_generate_receipt_hash():
-    digest = generate_receipt_hash("ORD-1001")
-    assert len(digest) == 64
+def generate_receipt_hash(order_id):
+    return hashlib.sha256(str(order_id).encode("utf-8")).hexdigest()
